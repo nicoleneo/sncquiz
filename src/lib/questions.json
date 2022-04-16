@@ -1,5 +1,82 @@
 [
 	{
+		"question": "toggle demo",
+		"answers": [
+			{
+				"options": [
+					{
+						"answer": "select 1",
+						"correct": true
+					},
+					{
+						"answer": "don't select",
+						"correct": false
+					}
+				]
+			},
+            {
+				"options": [
+					{
+						"answer": "don't select",
+						"correct": false
+					},
+					{
+						"answer": "select 2",
+						"correct": true
+					}
+				]
+			},
+            {
+				"options": [
+					{
+						"answer": "don't select",
+						"correct": false
+					},
+					{
+						"answer": "select 2",
+						"correct": true
+					},
+					{
+						"answer": "don't select",
+						"correct": false
+					}
+				]
+			},
+            {
+				"options": [
+					{
+						"answer": "select 1",
+						"correct": true
+					},
+					{
+						"answer": "don't select",
+						"correct": false
+					},
+					{
+						"answer": "don't select",
+						"correct": false
+					}
+				]
+			},
+			{
+				"options": [
+					{
+						"answer": "don't select",
+						"correct": false
+					},
+					{
+						"answer": "don't select",
+						"correct": false
+					},
+					{
+						"answer": "select 3",
+						"correct": true
+					}
+				]
+			}
+		]
+	},
+	{
 		"question": "An animal cell contains:",
 		"answers": [
 			{
