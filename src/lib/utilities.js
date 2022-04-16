@@ -26,6 +26,30 @@ export const shuffleAnswers = (questionObj) => {
 	return randomisedQuestionObj;
 };
 
-export const isQuestionCorrect = (answeredQuestion) => {
-    return _.every(answeredQuestion.answers, (option) => option.correct);
+export const checkAnswers = (selectedAnswers) => {
+    const numAnswers = selectedAnswers.length;
+		let numCorrect = 0;
+
+		selectedAnswers.forEach((selectedAnswer) => {
+			console.log(selectedAnswer);
+			let { options, togglePos } = selectedAnswer;
+			if (togglePos >= 0) {
+				const isCorrectAnswer = options[togglePos].correct;
+				if (isCorrectAnswer) {
+					numCorrect++;
+				}
+			}
+		});
+
+		const percentageCorrect = numCorrect === 0 ? 0 : numCorrect / numAnswers;
+		const percentageClassName =
+			percentageCorrect > 0.5
+				? percentageCorrect === 1
+					? "correct"
+					: "almostCorrect"
+				: "incorrect";
+	return {
+        percentageCorrect,
+        percentageClassName,
+    }
 }

@@ -12,10 +12,16 @@ code {
 
 .currentQuestion {
 	background: linear-gradient(180deg, #f6b868 0%, #ee6b2d 100%);
-  padding: 20px;
+	padding: 20px;
+}
+.currentQuestion.almostCorrect {
+	background: linear-gradient(180deg, #f6b868 0%, #ee6b2d 100%);
+}
+.currentQuestion.incorrect {
+	background: linear-gradient(180deg, #f1b496 0%, #ea806a 100%);
 }
 .currentQuestion.correct {
-  background: linear-gradient(180deg, #76E0C2 0%, #59CADA 100%);
+	background: linear-gradient(180deg, #76e0c2 0%, #59cada 100%);
 }
 
 h1.question {
@@ -35,7 +41,7 @@ h1.question {
 	font-weight: 700;
 	font-size: 24px;
 	line-height: 160%;
-	border: 2px solid #f9d29f;
+	border: 2px solid #fff;
 	box-sizing: border-box;
 	border-radius: 100px;
 	margin: 20px auto 0 auto;
@@ -50,12 +56,28 @@ h1.question {
 .answerOptions .answerOption {
 	text-align: center;
 	flex: 1;
+  color: #fff;
 }
 
 .answerOptions .answerOption.selected {
-	background: #f8caa3;
 	border-radius: 100px;
+}
+
+.currentQuestion.incorrect .answerOptions .answerOption.selected {
+	background: #f2cbbd;
+	color: #e47958;
+}
+
+.currentQuestion.currentQuestion.almostCorrect
+	.answerOptions
+	.answerOption.selected {
+	background: #f8caa3;
 	color: #9f938b;
+}
+
+.currentQuestion.correct .answerOptions .answerOption.selected {
+	background: #a5e7e2;
+	color: #4cad94;
 }
 
 /* Small screens */
@@ -72,15 +94,15 @@ h1.question {
 		flex: 1;
 		width: 100%;
 		height: 100px;
-    border-radius: 0;
+		border-radius: 0;
 	}
-  .answerOptions .answerOption.selected {
-    border-radius: 0;
-  }
-  .answerOptions .answerOption:last-child {
+	.answerOptions .answerOption.selected {
+		border-radius: 0;
+	}
+	.answerOptions .answerOption:last-child {
 		border-radius: 0 0 100px 100px;
 	}
-  .answerOptions .answerOption:first-child {
+	.answerOptions .answerOption:first-child {
 		border-radius: 100px 100px 0 0;
 	}
 }

@@ -1,14 +1,44 @@
 import React from "react";
 
-const Toggle = ({ answerOptions: { options } }) => {
-	console.log(options);
-	return (
-		<div className='answerOptions'>
-			{options.map((option) => (
-				<span className={`answerOption ${option.correct ? 'selected': ''}`}>{option.answer}</span>
-			))}
-		</div>
-	);
-};
+class Toggle extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { selectedIndex: -1 };
+
+		this.handleChange = this.handleChange.bind(this);
+	}
+
+	handleChange(event) {
+		console.log(event);
+		this.setState({ value: event.target.value });
+	}
+
+	setTogglePos(togglePos) {
+		const { handleToggle } = this.props;
+		this.setState({ selectedIndex: togglePos });
+		handleToggle(togglePos);
+	}
+
+	render() {
+		const {
+			answerOptions: { options },
+		} = this.props;
+		const { selectedIndex } = this.state;
+		return (
+			<div className='answerOptions'>
+				{options.map((option, togglePos) => (
+					<span
+						className={`answerOption ${
+							selectedIndex === togglePos ? "selected" : ""
+						}`}
+						key={`option-${togglePos}`}
+						onClick={() => this.setTogglePos(togglePos)}>
+						{option.answer}
+					</span>
+				))}
+			</div>
+		);
+	}
+}
 
 export default Toggle;
