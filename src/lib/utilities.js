@@ -15,7 +15,7 @@ export const getShuffledQuestions = () => {
 
 export const shuffleAnswers = (questionObj) => {
 	let shuffledAnswers = _.shuffle(questionObj.answers);
-	shuffledAnswers = shuffleAnswers.map((answer) => {
+	shuffledAnswers = shuffledAnswers.map((answer) => {
 		answer.options = _.shuffle(answer.options);
 		return answer;
 	});

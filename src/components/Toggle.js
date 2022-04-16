@@ -14,14 +14,18 @@ class Toggle extends React.Component {
 	}
 
 	setTogglePos(togglePos) {
-		const { handleToggle } = this.props;
-		this.setState({ selectedIndex: togglePos });
-		handleToggle(togglePos);
+		const { handleToggle, lockAnswer } = this.props;
+
+		if (!lockAnswer) {
+			this.setState({ selectedIndex: togglePos });
+			handleToggle(togglePos);
+		}
 	}
 
 	render() {
 		const {
 			answerOptions: { options },
+			lockAnswer,
 		} = this.props;
 		const { selectedIndex } = this.state;
 		return (

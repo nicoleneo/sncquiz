@@ -83,11 +83,11 @@
 				"options": [
 					{
 						"answer": "cell wall",
-						"correct": true
+						"correct": false
 					},
 					{
 						"answer": "ribosomes",
-						"correct": false
+						"correct": true
 					}
 				]
 			},
