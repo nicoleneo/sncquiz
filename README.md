@@ -6,7 +6,7 @@ Threshold of > 50% correct changes the state to partially correct
 Examples showing 3 toggle positions and allowing switching between questions
 Questions, toggle positions, answers are randomised.
 
-I don't know how to animate the selected bar sliding. I don't use TypeScript at work and have not seen the need to use it so far.
+I don't know how to animate the selected bar sliding. I don't use TypeScript at work and have not seen the need to use it so far. I have not had to implement CSS styles and states from scratch for React as I've always used component libraries such as Material UI, and overriding them.
 
 ## Live demo
 https://code.neo.my/sncquiz
